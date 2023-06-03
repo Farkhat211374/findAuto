@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "github.com/farkhat/findAuto";
+
+message Exterior {
+  enum Tire {
+    All_season = 0;
+    Summer = 1;
+    Winter = 2;
+  }
+
+  uint32 wheel_size = 1;
+  Tire tire= 2;
+  bool sunroof = 3;
+}
+
+

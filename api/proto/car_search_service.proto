@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "github.com/farkhat/findAuto";
+
+import "car_message.proto";
+import "engine_message.proto";
+import "transmission_message.proto";
+
+message Filter {
+  string brand = 1;
+  string body = 2;
+  uint32 year = 3;
+  string color = 5;
+  string country = 6;
+  Engine engine = 7;
+  Transmission transmission = 8;
+}
+
+message SearchCarRequest {
+  Filter filter = 1;
+}
+
+message SearchCarResponse {
+  Car car = 1;
+}
+
+service CarSearchService {
+  rpc SearchCar(SearchCarRequest) returns (stream SearchCarResponse) {};
+}
+

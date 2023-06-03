@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "github.com/farkhat/findAuto";
+
+message Brake {
+  enum Type {
+      Disk = 0;
+      Drum = 1;
+  }
+  Type type = 1;
+  double diameter = 2;
+  bool emergency_brake = 3;
+
+}

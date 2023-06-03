@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "github.com/farkhat/findAuto";
+
+message Audio {
+  string brand = 1;
+  uint32 speakers = 2;
+}

@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "github.com/farkhat/findAuto";
+
+import "car_message.proto";
+
+message CreateCarRequest {
+  Car car = 1;
+}
+
+message CreateCarResponse {
+  string id = 1;
+}
+
+message UploadImageRequest {
+  oneof data {
+    ImageInfo info = 1;
+    bytes chunk_data = 2;
+  };
+}
+
+message ImageInfo {
+  string car_id = 1;
+  string image_type = 2;
+}
+
+message UploadImageResponse {
+  string id = 1;
+  uint32 size = 2;
+}
+
+service CarManagementService {
+  rpc CreateCar(CreateCarRequest) returns (CreateCarResponse) {};
+  rpc UploadImage(stream UploadImageRequest) returns (UploadImageResponse) {};
+}
+

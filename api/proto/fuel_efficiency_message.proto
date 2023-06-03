@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "github.com/farkhat/findAuto";
+
+message Fuel {
+  double city = 1;
+  double highway = 2;
+}

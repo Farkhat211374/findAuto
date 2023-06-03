@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "github.com/farkhat/findAuto";
+
+message Interior {
+  string upholstery = 1;
+  string color = 2;
+  uint32 seating_capacity = 3;
+}

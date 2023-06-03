@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "github.com/farkhat/findAuto";
+import "audio_message.proto";
+import "engine_message.proto";
+import "exterior_message.proto";
+import "transmission_message.proto";
+import "fuel_efficiency_message.proto";
+import "infotainment_message.proto";
+import "parking_message.proto";
+import "brake_message.proto";
+import "interior_message.proto";
+
+message Car {
+  enum Drivetrain{
+    Front = 0;
+    Rear = 1;
+  }
+  string id = 1;
+  string brand = 2;
+  string model = 3;
+  uint32 year = 4;
+  string color = 5;
+  Engine engine = 6;
+  Transmission transmission = 7;
+  Drivetrain drivetrain = 8;
+  string body = 9;
+  Fuel fuel = 10;
+  Interior interior = 11;
+  Exterior exterior = 12;
+  Brake brake = 13;
+  Audio audio = 14;
+  Infotainment infotainment = 15;
+  Parking parking = 16;
+  string country = 17;
+}
+

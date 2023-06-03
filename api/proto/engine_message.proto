@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "github.com/farkhat/findAuto";
+
+message Engine {
+  enum Type {
+    V2 = 0;
+    V4 = 1;
+    V6 = 2;
+    V8 = 4;
+    V10 = 5;
+    V12 = 6;
+  }
+  Type type = 1;
+  double displacement = 2;
+  string fuel_type = 3;
+  uint32 horsepower = 4;
+  uint32 torque = 5;
+}

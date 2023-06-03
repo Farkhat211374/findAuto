@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "github.com/farkhat/findAuto";
+
+message Transmission {
+  enum Type {
+    Manual  = 0;
+    Automatic  = 1;
+  }
+  Type type = 1;
+  uint32 gears = 2;
+}

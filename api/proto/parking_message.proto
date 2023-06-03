@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "github.com/farkhat/findAuto";
+
+message Parking{
+  bool rear_view_camera = 1;
+  bool parking_sensors = 2;
+}

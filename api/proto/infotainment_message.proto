@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "github.com/farkhat/findAuto";
+
+message Infotainment {
+  bool navigation = 1;
+  bool bluetooth = 2;
+  bool aux = 3;
+  bool touchscreen_display = 4;
+}
